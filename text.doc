@@ -1,0 +1,42 @@
+1. html file 
+2. js file 
+3. how to write react code in App.js 
+4. react is build by using js code . thats why react is called as JS Frontend  library.
+5. Here i have build a configuration file using the command npm init 
+6. i have got package.json file which is a configuration file. we have all the information about the app
+7. different types of Bundlers are .(CRP USES)-->Web Pack and I AM GOING TO USE second ONE parcel 
+8. These Bundler are make our app a production ready app . 
+9. what is meant by production ready app ? 
+10. compress , minimize , bundling , optimize
+11. Now i have installed a bundler named parcel .for that i need to run a command 
+12. npm install -D parcel (here i have installed dev dependncies thats i have used -D)
+13. here i have got node modules folder and package-lock.json
+14. package _lock.json it mains exact versions of the packages. it will not changes the versions
+15. Nodemodules is like a data base which is used to maintain the packages. 
+16. every pacage has its own dev dependices and packages. it like a network 
+17. i have removes CDN links and going to install React (npm install react) and npm install react-dom 
+18. now i have to import React from "react" and ReactDOM from "react-dom"
+19. now i need to start the application 
+20. npx parcel index.html
+
+21. React introduces a special type of syntax which is know as JSX
+22. Browser doesnot understand JSX . whats why we need a complier to convert jsx to js which is understandable by browser 
+23. the complier is BABEL
+
+
+28-10-2023 
+
+24. Component  --> Everything ina react is a component 
+25. Class based Component and another one is Functional Component 
+26. CC is stateful component we can manage state inside a component 
+27. Functional component is stateless component untill 16.8 version . but in 16.8 version Hooks is gets introduced . we can easily maintain state in side Functional component 
+28. CC is old way of writing the code. 
+29. Functional Component is nothing but a normal js function which returns jsx 
+30. if we want to write a js piece of code inside jsx we need to wrap it up in a { }
+
+31. Props . it is like passing a argument to a function 
+
+32. Hooks .. Hooks is like a normal js utility functions 
+33. useState 
+34. useEffect 
+
