@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react"
 import RestaurantCard from "./RestaurantCard"
 const Body=()=>{
-
-
     //useState
-
-   const [listOfRestaurant,setListOfRestaurant]= useState([])
+   const [listOfRestaurant,setListOfRestaurant]= useState([])// 20 , 1
+   const [searchText,setSearchText]= useState("")
 
    //here the initial value of count is 5 , when ever we call the setCount  the value of count can be updated 
 
@@ -72,9 +70,9 @@ const Body=()=>{
 
 useEffect(() => {
     fetchData();
-  });
+  },[]);
 
-  const fetchData = async () => {
+const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.385044&lng=78.486671&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
@@ -90,8 +88,33 @@ useEffect(() => {
     setListOfRestaurant(data_one.data.cards[2].card.card.gridElements.infoWithStyle.restaurants)
    
   };
-    return (
+return (
         <div className="card-container">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              console.log(e.target.value);
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filteredRestaurant = listOfRestaurant.filter((each) =>
+                each.info.name.toUpperCase().includes(searchText.toUpperCase())
+              );
+
+              console.log(filteredRestaurant);
+              setListOfRestaurant(filteredRestaurant) // 2 resta
+             // setFilteredRestaurant(filteredRestaurant); //2 restaura
+              //   console.log(filteredRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
          {
             listOfRestaurant.map((each)=> <RestaurantCard resData={each} />)
          }
